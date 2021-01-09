@@ -2,12 +2,13 @@
 
 This file documents the process of designing, coding and testing this project. This process will use the TDD process, divided into several steps. These steps are:
 
-1.  Identifying User Stories, and sorting them into:
-    * Objects and their Attributes, and
-    * the Messages to be sent between them.
-2.  Identifying Features
-3.  Creating individual files for each Class.
-3. Creating
+1. [x]  Identifying User Stories, and sorting them into:
+ [x]      * Objects and their Attributes, and
+ [x]      * the Messages to be sent between them.
+2. [x]  Identifying Features
+3. [x]  Creating individual files for each Class.
+4. [x]  Creating individual RSpec files for each Class.
+5. [ ]  Write RSpec Unit tests for each individual feature.
 
 ##  1.  User Stories, Objects, Attributes & Messages:
 
@@ -22,55 +23,56 @@ Narrowed, the six User Stories are:
 
 The User Stories can be sorted into the following Objects and their Attributes:
 
-*  <Airport>
-  *  <@capacity>
-  *  <@apron []>
-*  <Plane>
-*  <Storm>
-  *  <@storm_state>
+*  `Airport`
+  *  `@capacity`
+  *  `@apron`
+*  `Plane`
+*  `Storm`
+  *  `@storm_state`
 
 The Messages to be sent between these Objects will be:
 
-1.  <land>
-2.  <take_off>
-3.  <stormy?>
-4.  <full?>
-5.  <taken_off?>
+1.  `land`
+2.  `take_off`
+3.  `stormy?`
+4.  `full?`
+5.  `taken_off?`
 
 The relationships between the Objects, Attributes, and Messages are:
 
 Object | Attribute | Message
-<Airport> | <@capacity> |
-| <@apron> | <land>, <takeoff>, <taken_off?>
-<Plane> ||
-<Storm> || <stormy?>
+---|---|---
+`Airport` | `@capacity` |
+ | `@apron` | `land`, `takeoff`, `taken_off?`
+`Plane` | |
+`Storm` | | `stormy?`
 
 ##  2.  Features
 
 ### Setting Up the Environment
 
-1.  Create the <Airport> Class.
-    1.  Set <Airport> instance attribute <@capacity>.
-        1.  Set <@capacity> constant <DEFAULT_CAPACITY>.
-        2.  Allow manual overriding of <@capacity>.
-    3.  Set <Airport> instance attribute <@apron> as array.
-    4.  Create an instance of the <Airport> Class.
+1.  Create the `Airport` Class.
+    1.  Set `Airport` instance attribute `@capacity`.
+        1.  Set `@capacity` constant `DEFAULT_CAPACITY`.
+        2.  Allow manual overriding of `@capacity`.
+    3.  Set `Airport` instance attribute `@apron` as an array.
+    4.  Create an instance of the `Airport` Class.
 
-2.  Create the <Plane> Class.
-    1.  Create an instance of the <Plane> Class.
+2.  Create the `Plane` Class.
+    1.  Create an instance of the `Plane` Class.
 
-3.  Create the <Storm> Class.
-    1.  Set <Storm> instance attribute <@storm_state>.
+3.  Create the `Storm` Class.
+    1.  Set `Storm` instance attribute `@storm_state`.
 
 ### Interacting with the Environment
 
-5.  Tell the <#plane> to <land> at the <#airport> (<#airport.land(#plane)>).
+5.  Tell the `#plane` to `land` at the `#airport` (`#airport.land(#plane)`).
 
-6.  If <#storm? != true>, and <#airport.full? != true>, add <#plane> to the <#apron>.
+6.  If `#storm? != true`, and `#airport.full? != true`, add `#plane` to the `[apron]`.
 
-7.  Tell the <#plane> to <take_off> from the <#airport> (<#airport.take_off(#plane)>).
+7.  Tell the `#plane` to `take_off` from the `#airport` (`#airport.take_off(#plane)`).
 
-8.  If <#storm? != true>, set Main Object variable <plane> to <#plane>, and remove <#plane> from <#apron>.
+8.  If `#storm? != true`, set Main Object variable `plane` to `#plane`, and remove `#plane` from `[apron]`.
 
 ### 3.  Creating Individual Files for Each Class
 
