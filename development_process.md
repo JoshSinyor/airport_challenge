@@ -9,7 +9,7 @@ This file documents the process of designing, coding and testing this project. T
 3.  Creating individual files for each Class.
 3. Creating
 
-## 1. User Stories, Objects, Attributes & Messages:
+##  1.  User Stories, Objects, Attributes & Messages:
 
 Narrowed, the six User Stories are:
 
@@ -32,7 +32,7 @@ The User Stories can be sorted into the following Objects and their Attributes:
 The Messages to be sent between these Objects will be:
 
 1.  <land>
-2.  <takeoff>
+2.  <take_off>
 3.  <stormy?>
 4.  <full?>
 5.  <taken_off?>
@@ -45,7 +45,7 @@ Object | Attribute | Message
 <Plane> ||
 <Storm> || <stormy?>
 
-## 2. Features
+##  2.  Features
 
 ### Setting Up the Environment
 
@@ -65,4 +65,17 @@ Object | Attribute | Message
 ### Interacting with the Environment
 
 5.  Tell the <#plane> to <land> at the <#airport> (<#airport.land(#plane)>).
-6.  If <#storm != "true">, add <#plane> to the <#apron>.
+
+6.  If <#storm? != true>, and <#airport.full? != true>, add <#plane> to the <#apron>.
+
+7.  Tell the <#plane> to <take_off> from the <#airport> (<#airport.take_off(#plane)>).
+
+8.  If <#storm? != true>, set Main Object variable <plane> to <#plane>, and remove <#plane> from <#apron>.
+
+### 3.  Creating Individual Files for Each Class
+
+This corresponds to commit dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae.
+
+### 4.  Creating Individual RSpec Files for Each Class
+
+This corresponds to commit dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae.
