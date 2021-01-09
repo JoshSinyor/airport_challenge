@@ -2,13 +2,13 @@
 
 This file documents the process of designing, coding and testing this project. This process will use the TDD process, divided into several steps. These steps are:
 
- [x] 1. Identifying User Stories, and sorting them into:
- [x]    * Objects and their Attributes, and
- [x]    * the Messages to be sent between them.
- [x] 2. Identifying Features
- [x] 3. Creating individual files for each Class.
- [x] 4. Creating individual RSpec files for each Class.
- [ ] 5. Write RSpec Unit tests for each individual feature.
+1. [x] Identifying User Stories, and sorting them into:
+- [x] Objects and their Attributes, and
+- [x] the Messages to be sent between them.
+2. [x] Identifying Features
+3. [x] Creating individual files for each Class.
+4. [x] Creating individual RSpec files for each Class.
+5. [ ] Write RSpec Unit tests for each individual feature.
 
 ##  1.  User Stories, Objects, Attributes & Messages:
 
