@@ -42,8 +42,7 @@ The relationships between the Objects, Attributes, and Messages are:
 
 Object | Attribute | Message
 ---|---|---
-`Airport` | `@capacity` |
- | `@apron` | `land`, `takeoff`, `taken_off?`
+`Airport` | `@capacity` `@apron` | `full?` `land`, `takeoff`, `taken_off?`
 `Plane` | |
 `Storm` | | `stormy?`
 
@@ -76,8 +75,8 @@ Object | Attribute | Message
 
 ### 3.  Creating Individual Files for Each Class
 
-This corresponds to commit dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae.
+This corresponds to commit [dd7329c](https://github.com/JoshSinyor/airport_challenge/commit/dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae).
 
 ### 4.  Creating Individual RSpec Files for Each Class
 
-This corresponds to commit dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae.
+This corresponds to commit [dd7329c](https://github.com/JoshSinyor/airport_challenge/commit/dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae)].
