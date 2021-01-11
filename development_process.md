@@ -73,10 +73,10 @@ Object | Attribute | Message
 
 8.  If `#storm? != true`, set Main Object variable `plane` to `#plane`, and remove `#plane` from `[apron]`.
 
-### 3.  Creating Individual Files for Each Class
+## 3.  Creating Individual Files for Each Class
 
 This corresponds to commit [dd7329c](https://github.com/JoshSinyor/airport_challenge/commit/dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae).
 
-### 4.  Creating Individual RSpec Files for Each Class
+## 4.  Creating Individual RSpec Files for Each Class
 
-This corresponds to commit [dd7329c](https://github.com/JoshSinyor/airport_challenge/commit/dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae)].
+This corresponds to commit [dd7329c](https://github.com/JoshSinyor/airport_challenge/commit/dd7329cbeb7a1e8bc76ffbbf7de7beb9a39731ae).
