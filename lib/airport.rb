@@ -14,7 +14,7 @@ class Airport
   end
 
   def stormy?
-    Weather.new.stormy
+    raise Exception.new("The weather is stormy.") if Weather.new.stormy
   end
 
   def full?
@@ -26,17 +26,17 @@ class Airport
   end
 
   def land(plane)
-    raise Exception.new("The weather is stormy.") if self.stormy?
+    self.stormy?
     self.full?
     raise Exception.new("This plane has already landed.") if plane.landed
+
     plane.instance_variable_set(:@landed, true)
     @apron.push(plane)
   end
 
   def take_off
     self.empty?
-    raise Exception.new("The weather is stormy.") if self.stormy?
-    plane = @apron[-1]
+    self.stormy?
     @apron[-1].instance_variable_set(:@landed, false)
     @apron.pop
   end
