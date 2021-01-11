@@ -4,6 +4,12 @@ require "weather"
 describe Airport do
 
   it { is_expected.to respond_to :apron }
+
+  it "should not land a plane when it's stormy" do
+    plane = Plane.new
+    expect(subject.land(plane)).to eq [plane]
+  end
+
   it { is_expected.to respond_to :capacity }
 
   it "should have a default capacity" do
@@ -27,7 +33,7 @@ describe Airport do
     allow(subject).to receive(:stormy?) { false }
     plane = Plane.new
     subject.land(plane)
-    expect { subject.land(plane) }.to raise_error {}
+    expect { subject.land(plane) }.to raise_exception
   end
 
   it { is_expected.to respond_to :full? }
@@ -35,26 +41,32 @@ describe Airport do
   it "should not land a plane if the airport is full to the default capacity" do
     allow(subject).to receive(:stormy?) { false }
     10.times { subject.land(Plane.new) }
-    expect { subject.land(Plane.new) }.to raise_error {}
+    expect { subject.land(Plane.new) }.to raise_exception
   end
 
   it "should not land a plane if the airport is full to a specified capacity" do
     subject = Airport.new(20)
     allow(subject).to receive(:stormy?) { false }
     20.times { subject.land(Plane.new) }
-    expect { subject.land(Plane.new) }.to raise_error {}
+    expect { subject.land(Plane.new) }.to raise_exception
+  end
+
+  it "should not allow a plane to land if it has already landed" do
+    plane = Plane.new
+    subject.land(plane)
+    expect { subject.land(plane) }.to raise_exception
   end
 
   it { is_expected.to respond_to :stormy? }
 
   it "should not allow a plane to land if it is stormy" do
     allow(subject).to receive(:stormy?) { true }
-    expect { subject.land(plane) }.to raise_error {}
+    expect { subject.land(plane) }.to raise_exception
   end
 
   it "should not allow a plane to take off if it is stormy" do
     allow(subject).to receive(:stormy?) { true }
-    expect { subject.take_off }.to raise_error {}
+    expect { subject.take_off }.to raise_exception
   end
 
   it { is_expected.to respond_to :take_off }
@@ -76,8 +88,8 @@ describe Airport do
 
   it { is_expected.to respond_to :empty? }
 
-  it "should not allow a plane to take off if the airport is empty" do
-    expect { subject.take_off }.to raise_error {}
+  it "should not allow a plane to take off if the airport is empty." do
+    expect { subject.take_off }.to raise_exception
   end
 
 end
