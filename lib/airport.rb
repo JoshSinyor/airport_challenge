@@ -1,7 +1,9 @@
-require_relative "plane"
+# frozen_string_literal: true
 
+require_relative 'plane'
+
+# Each airport is an instance of the Airport class.
 class Airport
-
   attr_reader :capacity
   attr_reader :apron
 
@@ -13,31 +15,30 @@ class Airport
   end
 
   def stormy?
-    raise Exception.new("The weather is stormy.") if Weather.new.stormy
+    raise Exception, 'The weather is stormy.' if Weather.new.stormy
   end
 
   def full?
-    raise Exception.new("The airport is full.") if @apron.count >= @capacity
+    raise Exception, 'The airport is full.' if @apron.count >= @capacity
   end
 
   def empty?
-    raise Exception.new("The airport is empty.") if @apron.empty?
+    raise Exception, 'The airport is empty.' if @apron.empty?
   end
 
   def land(plane)
-    self.stormy?
-    self.full?
-    raise Exception.new("This plane has already landed.") if plane.landed
+    stormy?
+    full?
+    raise Exception, 'This plane has already landed.' if plane.landed
 
     plane.instance_variable_set(:@landed, true)
     @apron.push(plane)
   end
 
   def take_off
-    self.empty?
-    self.stormy?
+    empty?
+    stormy?
     @apron[-1].instance_variable_set(:@landed, false)
     @apron.pop
   end
-
 end

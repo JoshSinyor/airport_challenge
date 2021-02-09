@@ -1,5 +1,6 @@
-require "airport"
+# frozen_string_literal: true
 
-describe "feature test" do
+require 'airport'
 
+describe 'feature test' do
 end
